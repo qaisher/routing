@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 
 @Component({
   selector: 'app-department',
@@ -8,17 +8,27 @@ import { Router } from '@angular/router';
 })
 export class DepartmentComponent implements OnInit {
 
-  constructor(private router : Router) { }
+  constructor(private router : Router, private route: ActivatedRoute) { }
   public department = [
     {"id":1, "department": "MHA"},
     {"id":2, "department": "MoD"},
     {"id":3, "department": "MoF"}
   ]
 
+  public idToHighlight: any;
   onSelect(department: any){
-    this.router.navigate(['/department', department.id])
+    this.router.navigate(['/department', department.id]);
+    //this.router.navigate([department.id], {relativeTo: this.route});
   }
   ngOnInit(): void {
+    //let idToHighlight = this.route.snapshot.paramMap.get('id');
+    this.route.paramMap.subscribe((params: ParamMap) => {
+      this.idToHighlight = params.get('id');
+    })
+  }
+
+  selected(department: any){
+    return this.idToHighlight == department.id;
   }
 
 }

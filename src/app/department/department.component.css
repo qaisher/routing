@@ -6,3 +6,7 @@
 .list{
     cursor: pointer;
 }
+
+.selected{
+    color: red;
+}
