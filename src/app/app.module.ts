@@ -9,6 +9,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { DepartmentDetailComponent } from './department-detail/department-detail.component';
 import { DepartmentComponentComponent } from './department-component/department-component.component';
 import { OverviewComponent } from './overview/overview.component';
+import { TestModuleModule } from './test-module/test-module.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { OverviewComponent } from './overview/overview.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //TestModuleModule
   ],
   providers: [],
   bootstrap: [AppComponent]

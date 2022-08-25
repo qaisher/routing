@@ -8,7 +8,9 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
 })
 export class DepartmentComponent implements OnInit {
 
-  constructor(private router : Router, private route: ActivatedRoute) { }
+  constructor(private router : Router, private route: ActivatedRoute) {
+    console.log('department component loaded');
+   }
   public department = [
     {"id":1, "department": "MHA"},
     {"id":2, "department": "MoD"},

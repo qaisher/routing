@@ -7,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    console.log('employees component loaded');
+   }
 
   public employees = [
     {"id": 124, "name": "Charlie", age:23},

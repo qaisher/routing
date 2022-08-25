@@ -6,12 +6,15 @@ import { ActivatedRoute, ParamMap, Router } from '@angular/router';
   templateUrl: './department-detail.component.html',
   styleUrls: ['./department-detail.component.css']
 })
+
 export class DepartmentDetailComponent implements OnInit {
 
   public departmentId : any;
 
   
-  constructor(private route: ActivatedRoute, private router:Router) { }
+  constructor(private route: ActivatedRoute, private router:Router) { 
+    console.log('this component is without lazy loading and it has been loaded');
+  }
   
   ngOnInit() {
     // let id = Number(this.route.snapshot.paramMap.get('id'));
